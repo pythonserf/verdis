@@ -1,0 +1,60 @@
+# Ship Deck: defense and fittings, placed by the mod once, on the first visit (ShipFitting.java).
+# Coordinates are map tiles (the same numbers as in the editor).
+#
+# zone <x1> <y1> <x2> <y2> <max> <block> <block> ...
+#   fills the box with up to <max> buildings, taking the blocks in turn; a block that does not fit is skipped.
+#   "a|b|c" = take the first block that exists (a mod may be missing).
+#   Short names find modded blocks: "w-comet" -> "exogenesisold-w-comet".
+# node <x> <y> [block]
+#   a power node at this exact place (placed before the zones, linked after them).
+# keep <x1> <y1> <x2> <y2>
+#   nothing is placed in this box (the reactor hall in the middle).
+#
+# Turrets face the bow (+x). Item turrets come loaded, generators get fuel, storage gets items (see ShipFitting).
+
+keep 92 42 138 86
+
+# power: generator room at the stern bottom, two lines of large nodes along both sides of the hall
+node 50 55
+node 46 67
+node 50 79
+node 62 48
+node 74 44
+node 86 41
+node 98 38
+node 110 38
+node 122 38
+node 136 41
+node 147 45
+node 157 52
+node 62 82
+node 66 96
+node 74 86
+node 86 88
+node 98 91
+node 110 91
+node 122 91
+node 136 88
+node 147 84
+node 157 77
+
+# generator room
+zone 42 30 60 52 14 combustion-generator combustion-generator battery
+
+# storage
+zone 42 74 54 95 6 vault container
+
+# hangar
+zone 58 86 78 101 3 ground-factory air-factory mining-drone-builder|ground-factory
+
+# bow: in front of the bulkhead to the cockpit, where the enemies come from
+zone 146 70 164 88 5 new-horizon-synchro|w-comet new-horizon-pulse|w-glory w-comet new-horizon-beam|w-guard
+zone 146 40 164 58 5 new-horizon-synchro|w-comet new-horizon-pulse|w-glory w-comet new-horizon-beam|w-guard
+
+# corridor at the core
+zone 64 70 84 80 4 w-ignition new-horizon-beam|y-proton w-pine-missile c-astral
+zone 64 48 84 58 4 w-ignition new-horizon-beam|y-proton w-pine-missile c-astral
+
+# sides: against flyers coming out of space
+zone 84 88 144 95 5 new-horizon-hive|w-orbit w-guard y-proton new-horizon-anti-bullet-turret|w-guard
+zone 84 33 144 40 5 new-horizon-hive|w-orbit w-guard y-proton new-horizon-anti-bullet-turret|w-guard

@@ -1,0 +1,8 @@
+name: verdis
+displayName: Verdis
+author: kusakov and claude ai
+description: "A living planet between Serpulo and Erekir: moss, glowing lakes and lava rifts. Every sector is playable."
+version: "0.1.0"
+minGameVersion: 160
+main: verdis.VerdisMod
+java: true
